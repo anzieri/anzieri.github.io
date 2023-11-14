@@ -58,7 +58,6 @@ with open(path_name, 'rb') as file:
     os
     re
     xgb_c
-    abnormal_url(url)
     suspicious_words(url)
     count_https(url)
     count_www(url)
@@ -75,6 +74,7 @@ with open(path_name, 'rb') as file:
     shortening_service(url)
     no_of_embed(url)
     having_ip_address(url)
+    abnormal_url(url)
     count_non_alphanumeric(url)
     tld_length(url)
     extract_file_type(url)
