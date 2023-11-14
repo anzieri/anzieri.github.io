@@ -19,7 +19,6 @@ path_name = '../anzieri.github.io/third_model.pkl'
 with open(path_name, 'rb') as file:
     data = pickle.load(file)
     xgb_c = data["model"]
-    xgb_c
     
     urlparse=data["urlparse"]
     
@@ -53,7 +52,7 @@ with open(path_name, 'rb') as file:
     main = data["main"]
     get_prediction_from_url = data["get_prediction"]
 
-    urlparse(url)
+    urlparse
     tldextract
     hashlib
     os
