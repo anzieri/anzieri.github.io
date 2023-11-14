@@ -21,7 +21,6 @@ with open(path_name, 'rb') as file:
     
     get_prediction_from_url = data["get_prediction"]
     xgb_c = data["model"]
-    xgb_c.predict(url)
     urlparse=data["urlparse"]
     main = data["main"]
     tldextract=data["tldextract"]
@@ -94,7 +93,7 @@ with open(path_name, 'rb') as file:
     extract_tld(url)
     count_attherate(url)
     main(url)
-
+    xgb_c
     
         
     
