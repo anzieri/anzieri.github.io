@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import dill as pickle
-# from urllib.parse import urlparse
+from urllib.parse import urlparse
 import re
 
 # Add title
