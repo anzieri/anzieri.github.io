@@ -20,8 +20,8 @@ with open(path_name, 'rb') as file:
     data = pickle.load(file)
     
     get_prediction_from_url = data["get_prediction"]
-    xgb_c = data["model"]
     urlparse=data["urlparse"]
+    xgb_c = data["model"]
     main = data["main"]
     tldextract=data["tldextract"]
     hashlib=data["hashlib"]
