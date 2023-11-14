@@ -20,7 +20,7 @@ with open(path_name, 'rb') as file:
     data = pickle.load(file)
 
     xgb_c = data["model"]
-    xgb_c
+    xgb_c.predict(url)
     get_prediction_from_url = data["get_prediction"]
     urlparse=data["urlparse"]
     main = data["main"]
@@ -94,7 +94,7 @@ with open(path_name, 'rb') as file:
     extract_tld(url)
     count_attherate(url)
     main(url)
-    xgb_c
+
     
         
     
