@@ -21,9 +21,8 @@ with open(path_name, 'rb') as file:
     xgb_c = data["model"]
     xgb_c
     
-    get_prediction_from_url = data["get_prediction"]
     urlparse=data["urlparse"]
-    main = data["main"]
+    
     tldextract=data["tldextract"]
     hashlib=data["hashlib"]
     abnormal_url = data["abnormal"]
@@ -51,6 +50,8 @@ with open(path_name, 'rb') as file:
     extract_root_domain = data["root_domain"]
     extract_tld = data["tld"]
     count_attherate = data["rate"]
+    main = data["main"]
+    get_prediction_from_url = data["get_prediction"]
     
     result =get_prediction_from_url(url)
 
