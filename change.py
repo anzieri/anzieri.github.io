@@ -18,10 +18,11 @@ st.button('Predict')
 path_name = '../anzieri.github.io/third_model.pkl'
 with open(path_name, 'rb') as file:
     data = pickle.load(file)
+    xgb_c = data["model"]
+    xgb_c
     
     get_prediction_from_url = data["get_prediction"]
     urlparse=data["urlparse"]
-    # xgb_c = data["model"]
     main = data["main"]
     tldextract=data["tldextract"]
     hashlib=data["hashlib"]
@@ -69,6 +70,7 @@ with open(path_name, 'rb') as file:
     hashlib
     os
     re
+    xgb_c
     abnormal_url(url)
     suspicious_words(url)
     count_https(url)
