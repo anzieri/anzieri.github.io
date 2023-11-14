@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import dill as pickle
-# from urllib.parse import urlparse
+from urllib.parse import urlparse
 import re
 
 # Add title
@@ -15,14 +15,13 @@ st.write("Welcome, this is a simple web app that helps you determine whether a U
 url= st.text_input("Enter Url")
 st.button('Predict')
 
-path_name = '/anzieri.github.io/third_model.pkl'
+path_name = '../anzieri.github.io/third_model.pkl'
 with open(path_name, 'rb') as file:
     data = pickle.load(file)
-
     xgb_c = data["model"]
-    get_prediction_from_url = data["get_prediction"]
+    
     urlparse=data["urlparse"]
-    main = data["main"]
+    
     tldextract=data["tldextract"]
     hashlib=data["hashlib"]
     abnormal_url = data["abnormal"]
@@ -50,26 +49,15 @@ with open(path_name, 'rb') as file:
     extract_root_domain = data["root_domain"]
     extract_tld = data["tld"]
     count_attherate = data["rate"]
-    
-    result =get_prediction_from_url(url)
+    main = data["main"]
+    get_prediction_from_url = data["get_prediction"]
 
-    if result =='SAFE': 
-        st.success('The URL is ' + result + ' :four_leaf_clover: . Proceed with browsing.' )
-    elif result =='DEFACEMENT':
-        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
-    elif result =='PHISHING':
-        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
-    elif result =='MALWARE':
-        st.error('The URL is most likely ' + result + ' ⚠️. Please reconsider visiting this site.')
-    else:
-        st.error('Hmm, something went wrong. Please try again.')
-        
-    urlparse
+    urlparse(url)
     tldextract
     hashlib
     os
     re
-    abnormal_url(url)
+    xgb_c
     suspicious_words(url)
     count_https(url)
     count_www(url)
@@ -86,6 +74,7 @@ with open(path_name, 'rb') as file:
     shortening_service(url)
     no_of_embed(url)
     having_ip_address(url)
+    abnormal_url(url)
     count_non_alphanumeric(url)
     tld_length(url)
     extract_file_type(url)
@@ -93,7 +82,51 @@ with open(path_name, 'rb') as file:
     extract_tld(url)
     count_attherate(url)
     main(url)
-    xgb_c
+    
+    result =get_prediction_from_url(url)
+
+    if result =='SAFE': 
+        st.success('The URL is ' + result + ' :four_leaf_clover: . Proceed with browsing.' )
+    elif result =='DEFACEMENT':
+        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
+    elif result =='PHISHING':
+        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
+    elif result =='MALWARE':
+        st.error('The URL is most likely ' + result + ' ⚠️. Please reconsider visiting this site.')
+    else:
+        st.error('Hmm, something went wrong. Please try again.')
+        
+    # urlparse
+    # tldextract
+    # hashlib
+    # os
+    # re
+    # xgb_c
+    # abnormal_url(url)
+    # suspicious_words(url)
+    # count_https(url)
+    # count_www(url)
+    # url_length(url)
+    # hostname_length(url)
+    # count_percent(url)
+    # fd_length(url)
+    # count_questionmark(url)
+    # count_forwardslash(url)
+    # count_equals(url)
+    # count_hyphen(url)
+    # letter_count(url)
+    # digit_count(url)
+    # shortening_service(url)
+    # no_of_embed(url)
+    # having_ip_address(url)
+    # count_non_alphanumeric(url)
+    # tld_length(url)
+    # extract_file_type(url)
+    # extract_root_domain(url)
+    # extract_tld(url)
+    # count_attherate(url)
+    # main(url)
+
     
         
     
