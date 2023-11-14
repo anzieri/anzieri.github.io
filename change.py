@@ -52,20 +52,7 @@ with open(path_name, 'rb') as file:
     count_attherate = data["rate"]
     main = data["main"]
     get_prediction_from_url = data["get_prediction"]
-    
-    result =get_prediction_from_url(url)
 
-    if result =='SAFE': 
-        st.success('The URL is ' + result + ' :four_leaf_clover: . Proceed with browsing.' )
-    elif result =='DEFACEMENT':
-        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
-    elif result =='PHISHING':
-        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
-    elif result =='MALWARE':
-        st.error('The URL is most likely ' + result + ' ⚠️. Please reconsider visiting this site.')
-    else:
-        st.error('Hmm, something went wrong. Please try again.')
-        
     urlparse
     tldextract
     hashlib
@@ -96,6 +83,50 @@ with open(path_name, 'rb') as file:
     extract_tld(url)
     count_attherate(url)
     main(url)
+    
+    result =get_prediction_from_url(url)
+
+    if result =='SAFE': 
+        st.success('The URL is ' + result + ' :four_leaf_clover: . Proceed with browsing.' )
+    elif result =='DEFACEMENT':
+        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
+    elif result =='PHISHING':
+        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
+    elif result =='MALWARE':
+        st.error('The URL is most likely ' + result + ' ⚠️. Please reconsider visiting this site.')
+    else:
+        st.error('Hmm, something went wrong. Please try again.')
+        
+    # urlparse
+    # tldextract
+    # hashlib
+    # os
+    # re
+    # xgb_c
+    # abnormal_url(url)
+    # suspicious_words(url)
+    # count_https(url)
+    # count_www(url)
+    # url_length(url)
+    # hostname_length(url)
+    # count_percent(url)
+    # fd_length(url)
+    # count_questionmark(url)
+    # count_forwardslash(url)
+    # count_equals(url)
+    # count_hyphen(url)
+    # letter_count(url)
+    # digit_count(url)
+    # shortening_service(url)
+    # no_of_embed(url)
+    # having_ip_address(url)
+    # count_non_alphanumeric(url)
+    # tld_length(url)
+    # extract_file_type(url)
+    # extract_root_domain(url)
+    # extract_tld(url)
+    # count_attherate(url)
+    # main(url)
 
     
         
