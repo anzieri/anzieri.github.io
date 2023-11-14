@@ -15,13 +15,13 @@ st.write("Welcome, this is a simple web app that helps you determine whether a U
 url= st.text_input("Enter Url")
 st.button('Predict')
 
-path_name = './anzieri.github.io/third_model.pkl'
+path_name = '../anzieri.github.io/third_model.pkl'
 with open(path_name, 'rb') as file:
     data = pickle.load(file)
-
+    
+    get_prediction_from_url = data["get_prediction"]
     xgb_c = data["model"]
     xgb_c.predict(url)
-    get_prediction_from_url = data["get_prediction"]
     urlparse=data["urlparse"]
     main = data["main"]
     tldextract=data["tldextract"]
