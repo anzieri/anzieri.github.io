@@ -7,7 +7,7 @@ import numpy as np
 # from sklearn.metrics import accuracy_score
 import streamlit as st
 import pickle
-with open('model_pickle.pkl','rb') as file:
+with open('../anzieri.github.io/Titanic/model_pickle.pkl','rb') as file:
     model = pickle.load(file)
 st.title('Did they survive? :ship:')
 # PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
