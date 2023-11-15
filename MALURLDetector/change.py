@@ -4,8 +4,8 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import dill as pickle
-from decompyle3 import Decompiler
-import sys
+# from decompyle3 import Decompiler
+# import sys
 
 # from urllib.parse import urlparse
 # import re
