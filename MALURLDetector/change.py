@@ -18,7 +18,7 @@ st.write("Welcome, this is a simple web app that helps you determine whether a U
 url= st.text_input("Enter Url")
 st.button('Predict')
 
-path_name = '../anzieri.github.io/MALURLDetector/third_model.pkl'
+path_name = '../anzieri.github.io/MALURLDetector/fourth_model.pkl'
 # Create a decompiler object
 # decompiler = Decompiler()
 
