@@ -6,7 +6,7 @@ import numpy as np
 import dill as pickle
 # from urllib.parse import urlparse
 import re
-
+from re import search as search
 # Add title
 st.title("Make things easier with MalDec! :mag:")
 
