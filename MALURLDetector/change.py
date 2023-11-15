@@ -18,7 +18,7 @@ st.write("Welcome, this is a simple web app that helps you determine whether a U
 url= st.text_input("Enter Url")
 st.button('Predict')
 
-path_name = '../anzieri.github.io/MALURLDetector/fourth_model.pkl'
+path_name = '../anzieri.github.io/MALURLDetector/fifth_model.pkl'
 # Create a decompiler object
 # decompiler = Decompiler()
 
@@ -57,6 +57,8 @@ with open(path_name, 'rb') as file:
     extract_tld = data["tld"]
     count_attherate = data["rate"]
     main = data["main"]
+    extract_rooty = data["rooty"]
+    
     get_prediction_from_url = data["get_prediction"]
     
     result =get_prediction_from_url(url)
@@ -87,6 +89,7 @@ with open(path_name, 'rb') as file:
     count_questionmark(url)
     count_forwardslash(url)
     count_equals(url)
+    extract_rooty(url)
     count_hyphen(url)
     letter_count(url)
     digit_count(url)
