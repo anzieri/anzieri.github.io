@@ -18,13 +18,14 @@ st.write("Welcome, this is a simple web app that helps you determine whether a U
 url= st.text_input("Enter Url")
 st.button('Predict')
 
-path_name = '../anzieri.github.io/MALURLDetector/third_model.pkl'
+path_name = '../anzieri.github.io/MALURLDetector/fourth_model.pkl'
 # Create a decompiler object
 # decompiler = Decompiler()
 
 with open(path_name, 'rb') as file:
     data = pickle.load(file)
     xgb_c = data["model"]
+
     
     urlparse=data["urlparse"]
     
@@ -57,7 +58,19 @@ with open(path_name, 'rb') as file:
     count_attherate = data["rate"]
     main = data["main"]
     get_prediction_from_url = data["get_prediction"]
+    
+    result =get_prediction_from_url(url)
 
+    if result =='SAFE': 
+        st.success('The URL is ' + result + ' :four_leaf_clover: . Proceed with browsing.' )
+    elif result =='DEFACEMENT':
+        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
+    elif result =='PHISHING':
+        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
+    elif result =='MALWARE':
+        st.error('The URL is most likely ' + result + ' ⚠️. Please reconsider visiting this site.')
+    else:
+        st.error('Hmm, something went wrong. Please try again.')
     urlparse
     tldextract
     hashlib
@@ -89,18 +102,7 @@ with open(path_name, 'rb') as file:
     count_attherate(url)
     main(url)
     
-    result =get_prediction_from_url(url)
-
-    if result =='SAFE': 
-        st.success('The URL is ' + result + ' :four_leaf_clover: . Proceed with browsing.' )
-    elif result =='DEFACEMENT':
-        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
-    elif result =='PHISHING':
-        st.warning('The URL is most likely ' + result + '⚠️. Please proceed with browsing.')
-    elif result =='MALWARE':
-        st.error('The URL is most likely ' + result + ' ⚠️. Please reconsider visiting this site.')
-    else:
-        st.error('Hmm, something went wrong. Please try again.')
+    
         
     # urlparse
     # tldextract
