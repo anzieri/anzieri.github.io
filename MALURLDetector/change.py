@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import dill as pickle
-from urllib.parse import urlparse
+# from urllib.parse import urlparse
 import re
 
 # Add title
@@ -52,7 +52,7 @@ with open(path_name, 'rb') as file:
     main = data["main"]
     get_prediction_from_url = data["get_prediction"]
 
-    urlparse(url)
+    urlparse
     tldextract
     hashlib
     os
