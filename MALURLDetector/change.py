@@ -21,11 +21,10 @@ st.button('Predict')
 path_name = '../anzieri.github.io/MALURLDetector/third_model.pkl'
 # Create a decompiler object
 decompiler = Decompiler()
-# Decompile the code object
-# source_code = decompiler.decompile_code(code_obj)
 
 with open(path_name, 'rb') as file:
-    data = decompiler.decompile_code(pickle.load(file))
+    modelling = pickle.load(file)
+    data = decompiler.decompile_code(modelling)
     xgb_c = data["model"]
     
     urlparse=data["urlparse"]
