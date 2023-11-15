@@ -4,9 +4,12 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import dill as pickle
-from urllib.parse import urlparse
-import re
+# from decompyle3 import Decompiler
+# import sys
 
+# from urllib.parse import urlparse
+# import re
+# from re import search as search
 # Add title
 st.title("Make things easier with MalDec! :mag:")
 
@@ -15,7 +18,10 @@ st.write("Welcome, this is a simple web app that helps you determine whether a U
 url= st.text_input("Enter Url")
 st.button('Predict')
 
-path_name = '../anzieri.github.io/third_model.pkl'
+path_name = '../anzieri.github.io/MALURLDetector/third_model.pkl'
+# Create a decompiler object
+# decompiler = Decompiler()
+
 with open(path_name, 'rb') as file:
     data = pickle.load(file)
     xgb_c = data["model"]
@@ -52,7 +58,7 @@ with open(path_name, 'rb') as file:
     main = data["main"]
     get_prediction_from_url = data["get_prediction"]
 
-    urlparse(url)
+    urlparse
     tldextract
     hashlib
     os
