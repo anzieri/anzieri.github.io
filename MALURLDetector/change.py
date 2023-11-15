@@ -4,6 +4,9 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import dill as pickle
+from decompyle3 import Decompiler
+import sys
+
 # from urllib.parse import urlparse
 # import re
 # from re import search as search
@@ -16,8 +19,13 @@ url= st.text_input("Enter Url")
 st.button('Predict')
 
 path_name = '../anzieri.github.io/MALURLDetector/third_model.pkl'
+# Create a decompiler object
+decompiler = Decompiler()
+# Decompile the code object
+# source_code = decompiler.decompile_code(code_obj)
+
 with open(path_name, 'rb') as file:
-    data = pickle.load(file)
+    data = decompiler.decompile_code(pickle.load(file))
     xgb_c = data["model"]
     
     urlparse=data["urlparse"]
