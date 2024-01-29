@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="valstyle.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine?❤️</h1>
+        <div class="buttons">
+            <a href="#" class="btn no" id = "noButton">No</a>
+            <a href="mailto:amaranyanzi1@gmail.com?subject=Valentine&body=Yes,%20I%20will%20be%20your%20valentine!%20Baibyyy😘💕" class="btn yes" id = "yesButton">Yes</a>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const noButton = document.getElementById('noButton');
+            const yesButton = document.getElementById('yesButton');
+            yesButton.addEventListener('click', balloons);
+            noButton.addEventListener('click', moveButton);
+            noButton.addEventListener('mouseover', moveButton);
+        
+            function moveButton() {
+                const x = Math.floor(Math.random() * window.innerWidth);
+                const y = Math.floor(Math.random() * window.innerHeight);
+                noButton.style.position = 'absolute';
+                noButton.style.left = `${x}px`;
+                noButton.style.top = `${y}px`;
+            }
+
+            function balloons(){
+                var count = 100;
+                var section = document.querySelector('section');
+                var i = 0;
+                while(i < count){
+                    var balloon = document.createElement('i');
+                    var x = Math.floor(Math.random() * window.innerWidth);
+                    var y = Math.floor(Math.random() * window.innerHeight);
+                    var size = Math.random() * 10;
+                    balloon.style.left = x + 'px';
+                    balloon.style.top = y + 'px';
+                    balloon.style.width = 1 + size + 'px';
+                    balloon.style.height = 1 + size + 'px';
+                    section.appendChild(balloon);
+                    i++;
+                }
+            }
+
+
+        }); </script>
+    </div>
+    <!-- <div class="hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+         
+      </div> -->
+</body>
+</html>
