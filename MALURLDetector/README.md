@@ -18,6 +18,33 @@ The model was trained using the Extreme Gradient Boosting (XGBoost) Classifier. 
 
 ## WalkThrough
 
+The URL is parsed and passed into various functions that is then extracted into 23 features to be used for the training and prediction process.
+## Features 
+1.	abnormal_url: simple url parsing
+2.	sus_url: searches for a series of specific suspicious words(‘PayPal|login|signin|bank|account|update|free|lucky|service|bonus|ebayisapi|webscr’)
+3.	digits: 
+4.	count_question: number of question mark symbols
+5.	count_non_alphanumeric 
+6.	count_https: protocol search (https or http)
+7.	count-www: appearance counts of www
+8.	url_length: length of the entire string url
+9.	hostname_length: string length of the hostname alone
+10.	fd_length: string length of the first directory
+11.	count-letters: number of letters
+12.	short_url: shortened urls are accounted for (example: bit\.ly|goo\.gl|shorte\.st)
+13.	count_embed_domian: number of double slashes
+14.	use_of_ip: regex pattern search for ipv6 and ipv4
+15.	count/ : number of slashes(directories)
+16.	count% : number of percentage signs
+17.	count= : number of equals 
+18.	count- : number of hyphens
+19.	count@ : number of at signs
+20.	root_domain: country/organization based.(.com,.uk,.org)
+21.	tld_length: string length of the top level domain
+22.	file: file embedded within link (‘.bat|.dll|.pif|.exe|.scr|.application|.msp’)
+23.	domain
+
+
 ![image](https://github.com/anzieri/anzieri.github.io/assets/88835282/f44b4ae0-46c9-4bcf-8e8c-43a5b7878ada)
 
 
