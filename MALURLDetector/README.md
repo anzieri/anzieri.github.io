@@ -18,3 +18,6 @@ The model was trained using the Extreme Gradient Boosting (XGBoost) Classifier. 
 
 ## WalkThrough
 
+![image](https://github.com/anzieri/anzieri.github.io/assets/88835282/f44b4ae0-46c9-4bcf-8e8c-43a5b7878ada)
+
+
