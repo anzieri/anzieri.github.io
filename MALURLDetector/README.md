@@ -1,6 +1,8 @@
 # Malicious URL Detector using Streamlit
 
-Streamlit is a free, open-source Python framework that lets users create interactive web apps from data scripts. 
+Streamlit is a free, open-source Python framework that lets users create interactive web apps from data scripts. The training of the Machine Learning model used was done from scratch in the `MaliciousURLs(1).ipynb` notebook. The dataset used for the training was from Kaggle link https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset however feel free to use any other dataset available.
+
+The model was trained using the Extreme Gradient Boosting (XGBoost) Classifier. Exportation of the model was done using pickle.
 
 ## Why This Project?
 
